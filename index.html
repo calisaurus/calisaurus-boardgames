@@ -2,20 +2,37 @@
 <html>
 <head>
 <title>Home</title>
+<link rel="shortcut icon" href="./favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <style>
   html {
-    font-family: sans-serif;
+    font-family: 'Lato', Helvetica, sans-serif;
     color: white;
   }
   body {
-    background-image: url('./diplo.jpg');
     width: 100%;
     height: 100%;
+    text-align: center;
+    background: #7a7a7a;
+    margin: 0;
+  }
+  .Header-logo {
+    transform-origin: 50% 90%;
+    animation: Header-logo-spin infinite 4s ease-in-out;
+  }
+  @keyframes Header-logo-spin {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
   }
 </style>
 </head>
 
 <body>
-  <h1>Calisaurus.net</h1>
+  <h1>boardgames.calisaurus.net</h1>
+  <img src="./calisaurus.png" alt="purple dinosaur" class="Header-logo" />
+  <br />
+  <h2>Coming soon!</h2>
+
 </body>
 </html>

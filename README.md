@@ -1,2 +1,2 @@
-# calisaurus-site
-Code for my website
+# calisaurus-boardgames
+Code and content for boardgames.calisaurus.net
