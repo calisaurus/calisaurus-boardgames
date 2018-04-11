@@ -20,6 +20,17 @@
     transform-origin: 50% 90%;
     animation: Header-logo-spin infinite 4s ease-in-out;
   }
+
+  .link>p {
+    color: white;
+    margin: 0;
+  }
+
+  .link>p>a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8em;
+  }
   @keyframes Header-logo-spin {
     0% { transform: rotate(-5deg); }
     50% { transform: rotate(5deg); }
@@ -32,7 +43,12 @@
   <h1>boardgames.calisaurus.net</h1>
   <img src="./calisaurus.png" alt="purple dinosaur" class="Header-logo" />
   <br />
-  <h2>Coming soon!</h2>
+    <div class="link">
+      <p><a href="./about.html">About A Board Game A Day</a></p>
+      <p><a href="./january.html">January's Stats</a></p>
+      <p><a href="./february.html">February's stats</a></p>
+      <p><a href="./march.html">March's stats</a></p>
+    </div>
 
 </body>
 </html>
