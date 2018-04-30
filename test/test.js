@@ -14,8 +14,8 @@ describe('Calisaurus boardgames website', function() {
       expect(actual).to.have.string('<a href="./about.html">About A Board Game A Day</a>')
     })
 
-    it('should contain an image', function() {
-      expect(actual).to.have.string('calisaurus.png')
+    it('should contain an image with an alt tag', function() {
+      expect(actual).to.match(/<img src="\.\/calisaurus\.png" alt=".*" .* \/>/)
     })
   })
 
