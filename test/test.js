@@ -1,8 +1,13 @@
+const fetch = require('promise-path').fetch
+const expect = require('chai').expect
 var assert = require('assert')
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1,2,3].indexOf(4), -1)
+
+describe('Calisaurus boardgames website', function() {
+  describe('Index Page', function() {
+    it('should contain links to other pages', function() {
+      return fetch('http://boardgames.calisaurus.net').then(function(body) {
+        expect(body).to.have.string('<a href="./about.html">About A Board Game A Day</a>')
+      })
     })
   })
 })
