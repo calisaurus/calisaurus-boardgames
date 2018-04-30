@@ -2,7 +2,7 @@ const fetch = require('promise-path').fetch
 const expect = require('chai').expect
 var assert = require('assert')
 
-let siteUrl = process.env.SITE_URL || 'http://boardgames.calisaurus.net'
+let siteUrl = process.env.SITE_URL
 
 describe(`Calisaurus boardgames website : ${siteUrl}`, function() {
   describe('Index Page', function() {

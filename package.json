@@ -4,8 +4,8 @@
   "description": "Code and content for boardgames.calisaurus.net",
   "main": "index.js",
   "scripts": {
-    "test": "export SITE_URL='http://localhost:8080' && mocha",
-    "test:live": "mocha"
+    "test": "cross-env SITE_URL='http://localhost:8080' mocha",
+    "test:live": "cross-env SITE_URL='http://boardgames.calisaurus.net' mocha"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hannahbunce/calisaurus-boardgames#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "cross-env": "^5.1.4",
     "promise-path": "^1.2.6"
   },
   "dependencies": {
