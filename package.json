@@ -4,7 +4,8 @@
   "description": "Code and content for boardgames.calisaurus.net",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "export SITE_URL='http://localhost:8080' && mocha",
+    "test:live": "mocha"
   },
   "repository": {
     "type": "git",

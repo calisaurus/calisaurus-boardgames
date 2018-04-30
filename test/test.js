@@ -2,11 +2,13 @@ const fetch = require('promise-path').fetch
 const expect = require('chai').expect
 var assert = require('assert')
 
-describe('Calisaurus boardgames website', function() {
+let siteUrl = process.env.SITE_URL || 'http://boardgames.calisaurus.net'
+
+describe(`Calisaurus boardgames website : ${siteUrl}`, function() {
   describe('Index Page', function() {
     let actual
     beforeEach(function() {
-      return fetch('http://boardgames.calisaurus.net').then(function(body) {
+      return fetch(`${siteUrl}`).then(function(body) {
         actual = body
       })
     })
@@ -22,7 +24,7 @@ describe('Calisaurus boardgames website', function() {
   describe('About page', function() {
     let actual
     beforeEach(function() {
-      return fetch('http://boardgames.calisaurus.net/about').then(function(body) {
+      return fetch(`${siteUrl}/about`).then(function(body) {
         actual = body
       })
     })
