@@ -19,6 +19,10 @@ describe(`Calisaurus boardgames website : ${siteUrl}`, function() {
     it('should contain an image with an alt tag', function() {
       expect(actual).to.match(/<img src="\.\/calisaurus\.png" alt=".*" .* \/>/)
     })
+
+    it('should contain a favicon', function() {
+      expect(actual).to.match(/<link rel="shortcut icon" href=".\/favicon.png">/)
+    })
   })
 
   describe('About page', function() {
@@ -35,4 +39,20 @@ describe(`Calisaurus boardgames website : ${siteUrl}`, function() {
       expect(actual).to.have.string('about.jpg')
     })
   })
+
+  describe('January', function() {
+    let actual
+    beforeEach(function() {
+      return fetch(`${siteUrl}/january`).then(function(body) {
+        actual = body
+      })
+    })
+    it('should contain a heading', function() {
+      expect(actual).to.have.string('<h1>January 2018 - A Quick Look</h1>')
+    })
+    it('should contain a link back to index', function() {
+      expect(actual).to.have.string('<a href="./index.html">A BOARD GAME A DAY</a>')
+    })
+  })
+
 })
