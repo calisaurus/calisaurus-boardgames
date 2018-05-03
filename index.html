@@ -16,38 +16,118 @@
     background: #7a7a7a;
     margin: 0;
   }
+
+  .banner-title {
+    color: black;
+    background-color: white;
+    height: 300px;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .banner-title>h1 {
+    text-transform: uppercase;
+  }
   .Header-logo {
     transform-origin: 50% 90%;
     animation: Header-logo-spin infinite 4s ease-in-out;
   }
 
-  .link>p {
+  .link p {
     color: white;
     margin: 0;
   }
 
-  .link>p>a {
+  .link p>a {
     color: white;
     text-decoration: none;
     font-size: 1.8em;
   }
-  @keyframes Header-logo-spin {
-    0% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-    100% { transform: rotate(-5deg); }
+
+  .january {
+    background-image: url('./january.jpg');
+  }
+
+  .february {
+    background-image: url('./february.jpg');
+  }
+
+  .march {
+    background-image: url('./march.jpg');
+  }
+
+  .april {
+    background-image: url('./april.png');
+  }
+
+  .content-preview {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+
+  .content-preview>* {
+    z-index: 2;
+    position: relative;
+    text-transform: uppercase;
+    padding: 20px;
+  }
+
+  .content-preview:before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 500px;
+    content: '';
+    opacity: .3;
+    background-color: #222;
+  }
+
+  .content-outside {
+    position: relative;
+  }
+
   }
 </style>
 </head>
 
 <body>
-  <h1>boardgames.calisaurus.net</h1>
-  <img src="./calisaurus.png" alt="purple dinosaur" class="Header-logo" />
-  <br />
+  <div class='banner-title'>
+    <h1>A Board Game A Day</h1>
+    <h2>board games, every day</h2>
+  </div>
     <div class="link">
-      <p><a href="./about.html">About A Board Game A Day</a></p>
-      <p><a href="./january.html">January's Stats</a></p>
-      <p><a href="./february.html">February's stats</a></p>
-      <p><a href="./march.html">March's stats</a></p>
+
+      <div class="content-outside">
+        <div class="content-preview april">
+          <p><a href="./april.html">April's stats</a></p>
+        </div>
+
+      </div>
+
+      <div class="content-outside">
+        <div class="content-preview march">
+          <p><a href="./march.html">March's stats</a></p>
+        </div>
+      </div>
+
+      <div class="content-outside">
+        <div class="content-preview february">
+          <p><a href="./february.html">February's stats</a></p>
+        </div>
+      </div>
+
+      <div class="content-outside">
+        <div class="content-preview january">
+          <p><a href="./january.html">January's Stats</a></p>
+        </div>
+      </div>
+
     </div>
 
 </body>
