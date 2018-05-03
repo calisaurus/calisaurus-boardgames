@@ -8,6 +8,7 @@
   html {
     font-family: 'Lato', Helvetica, sans-serif;
     color: white;
+    line-height: 1.5em;
   }
   body {
     width: 100%;
@@ -27,10 +28,12 @@
 
   .banner-title>h1 {
     text-transform: uppercase;
+    font-size: 5em;
   }
-  .Header-logo {
-    transform-origin: 50% 90%;
-    animation: Header-logo-spin infinite 4s ease-in-out;
+
+  .banner-title>h2 {
+    font-weight: lighter;
+    color: grey;
   }
 
   .link p {
@@ -38,7 +41,7 @@
     margin: 0;
   }
 
-  .link p>a {
+  .link a {
     color: white;
     text-decoration: none;
     font-size: 1.8em;
@@ -68,11 +71,30 @@
     color: #fff;
   }
 
-  .content-preview>* {
+  .content-preview>p {
     z-index: 2;
     position: relative;
-    text-transform: uppercase;
     padding: 20px;
+    word-wrap: break-word;
+    text-align: center;
+    top: 50%;
+    width: 660px;
+    margin: auto;
+    font-size: 18px;
+  }
+
+  .content-preview>a {
+    z-index: 2;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 2.33em;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
   }
 
   .content-preview:before {
@@ -84,7 +106,7 @@
     width: 100%;
     height: 500px;
     content: '';
-    opacity: .3;
+    opacity: .6;
     background-color: #222;
   }
 
@@ -105,26 +127,56 @@
 
       <div class="content-outside">
         <div class="content-preview april">
-          <p><a href="./april.html">April's stats</a></p>
+          <a href="./april.html">April 2018 - A Quick Look</a>
+            <p class="preview-text">Total games played: 44
+              Days missed: 0
+              Most games played in a day: 5 on 28th April - International Tabletop Day!
+              Most played game: Lovecraft Letter with 7 plays
+              Percentage of co-operative games played: 29.5% (13 games), 9 wins and 4 losses
+              Win rates between Hannah and John in versus games: 67.7% (21 games) to John,
+              […]
+            </p>
         </div>
 
       </div>
 
       <div class="content-outside">
         <div class="content-preview march">
-          <p><a href="./march.html">March's stats</a></p>
+          <a href="./march.html">March 2018 - A Quick Look</a>
+            <p class="preview-text">Total games played: 48
+              Days missed: 0
+              Most games played in a day: 3 on multiple days
+              Most played game: Dominion with 5 plays
+              Percentage of co-operative games played: 18.8% (9 games), 7 wins and 2 losses
+              Win rates between Hannah and John in versus games: 48.7% (19 games) to John, 46.2% (18 games) to […]
+          </p>
         </div>
       </div>
 
       <div class="content-outside">
         <div class="content-preview february">
-          <p><a href="./february.html">February's stats</a></p>
+          <a href="./february.html">February 2018 - A Quick Look</a>
+            <p class="preview-text">Total games played: 45
+              Days missed: 0
+              Most games played in a day: 6 on 25th Feb
+              Most played game: Love Letter with 11 plays Percentage of co-operative games played: 33.3% (15 games), 13 wins and 2 losses
+              Win rates between Hannah and John in versus games: 50% (15 games) to Hannah, 43.3% (13 games) to John,
+              […]
+            </p>
         </div>
       </div>
 
       <div class="content-outside">
         <div class="content-preview january">
-          <p><a href="./january.html">January's Stats</a></p>
+          <a href="./january.html">January 2018 - A Quick Look</a>
+            <p class="preview-text">Total games played: 42
+              Days missed: 0
+              Most games played in a day: 2, on multiple occasions
+              Most played game: Harry Potter: Hogwarts Battle with 7 plays
+              Percentage of co-operative games played: 42.9% (18 games), 17 wins and 1 loss
+              Win rates between Hannah and John in versus games: 52% (13 games) to Hannah Largest
+              […]
+            </p>
         </div>
       </div>
 
