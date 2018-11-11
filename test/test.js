@@ -51,7 +51,7 @@ describe(`Calisaurus boardgames website : ${siteUrl}`, function() {
       expect(actual).to.have.string('<h1>January 2018 - A Quick Look</h1>')
     })
     it('should contain a link back to index', function() {
-      expect(actual).to.have.string('<a href="./index.html">A BOARD GAME A DAY</a>')
+      expect(actual).to.have.string('<a href="/index.html">A BOARD GAME A DAY</a>')
     })
   })
 
