@@ -1,0 +1,143 @@
+html {
+  font-family: 'Lato', Helvetica, sans-serif;
+  color: white;
+  line-height: 1.5em;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #7a7a7a;
+  margin: 0;
+}
+
+.banner-title {
+  color: black;
+  background-color: white;
+  height: 300px;
+  margin: 0;
+  padding: 20px;
+}
+
+.banner-title>h1 {
+  text-transform: uppercase;
+  font-size: 5em;
+}
+
+.banner-title>h2 {
+  font-weight: lighter;
+  color: grey;
+}
+
+.link p {
+  color: white;
+  margin: 0;
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8em;
+}
+
+.january {
+  background-image: url('./assets/january.jpg');
+}
+
+.february {
+  background-image: url('./assets/february.jpg');
+}
+
+.march {
+  background-image: url('./assets/march.jpg');
+}
+
+.april {
+  background-image: url('./assets/april.png');
+}
+
+.may {
+  background-image: url('/assets/may.jpg');
+}
+
+.ukge-saturday {
+  background-image: url('/assets/ukge-saturday.jpg');
+}
+
+.june {
+  background-image: url('/assets/june.jpg');
+}
+
+.july {
+  background-image: url('/assets/july.png');
+}
+
+.august {
+  background-image: url('/assets/august.png');
+}
+
+.september {
+  background-image: url('/assets/september.jpg');
+}
+
+.october {
+  background-image: url('/october.jpg');
+}
+
+.content-preview {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  border-bottom: 4px solid white;
+}
+
+.content-preview>p {
+  z-index: 2;
+  position: relative;
+  padding: 20px;
+  word-wrap: break-word;
+  text-align: center;
+  top: 50%;
+  width: 660px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.content-preview>a {
+  z-index: 2;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 88px;
+  font-size: 2.33em;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+}
+
+.content-preview>a:hover {
+  background: rgba(90, 31, 73, 0.5);
+}
+
+.content-preview:before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 200px;
+  content: '';
+  opacity: .6;
+  background-color: #222;
+}
+
+.content-outside {
+  position: relative;
+}
+}
