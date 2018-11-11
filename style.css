@@ -81,6 +81,10 @@ body {
   background-image: url('/assets/september.jpg');
 }
 
+.october {
+  background-image: url('/october.jpg');
+}
+
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
