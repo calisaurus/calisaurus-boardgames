@@ -23,6 +23,7 @@
     "promise-path": "^1.3.0"
   },
   "dependencies": {
+    "chart.js": "^2.7.3",
     "handlebars": "^4.0.12",
     "mocha": "^5.1.1"
   }

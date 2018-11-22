@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>2018 in Review</title>
+  <link rel="shortcut icon" href="./assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!--<link href="./style.css" type="text/css" rel="stylesheet">-->
+  <script src="/node_modules/chart.js/dist/Chart.js"></script>
+</head>
+
+<body>
+
+<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+  <canvas id="testChart"></canvas>
+  </div>
+
+  <script>
+    var ctx = document.getElementById("testChart");
+    var testChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"],
+        datasets: [{
+          label: '# of Games',
+          //xAxisID: 'Month',
+          //yAxisID: 'Number of Games',
+          lineTension: 0,
+          data: [42, 45, 48, 44, 46, 48, 34, 46, 39, 38, 25],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
