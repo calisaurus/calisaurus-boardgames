@@ -1,5 +1,4 @@
 var feedSource = 'https://boardgames-api.calisaurus.net/api/boardgame/feed';
-//feedSource = '/feed.json';
 
 $.get(feedSource, function(data, status) {
   console.log("Data: " , data , "\nStatus: " , status);
