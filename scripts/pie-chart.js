@@ -1,7 +1,7 @@
 var feedSource = 'https://boardgames-api.calisaurus.net/api/boardgame/feed';
 
 $.get(feedSource, function(data, status) {
-  console.log("Data: " , data , "\nStatus: " , status);
+  console.log("Data: ", data, "\nStatus: ", status);
   var result = calculateWinRate(data.feed)
   var coop = calculateCoop(data.feed)
   console.log(result);
@@ -40,22 +40,34 @@ function calculateWinRate(feedData) {
 
 function renderCoopChart(coop, versus) {
   var total = coop + versus;
-  var coopPct = coop / total;
-  var versusPct = versus / total;
+  var values = [coop, versus];
   var ctx = document.getElementById("coopChart");
   var coopChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: [`Coop ${formatPct(coopPct)}`, `Versus ${formatPct(versusPct)}`],
+      labels: ["Coop", "Versus"],
       datasets: [{
         label: '# of Games',
         backgroundColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 3, 1)'],
         lineTension: 0,
-        data: [coop, versus],
+        data: values,
         borderColor: 'rgba(51, 57, 255, 1)',
         borderWidth: 3,
         borderJoinStyle: 'round',
       }]
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, chartData) {
+            var value = values[tooltipItem.index]
+            var label = chartData.labels[tooltipItem.index]
+            var valuePct = value / total
+            return `${label}: ${value} (${formatPct(valuePct)})`
+
+          }
+        }
+      }
     }
   });
 }
