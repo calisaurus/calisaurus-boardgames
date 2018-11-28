@@ -11,8 +11,8 @@ $.get(feedSource, function(data, status) {
 })
 
 function renderChart(hannah, john, draw, other) {
-  var ctx = document.getElementById("pieChart");
-  var pieChart = new Chart(ctx, {
+  var chart = document.getElementById("pieChart");
+  var pieChart = new Chart(chart, {
     type: 'doughnut',
     data: {
       labels: ["Hannah", "John", "Draw", "Other"],
@@ -41,8 +41,8 @@ function calculateWinRate(feedData) {
 function renderCoopChart(coop, versus) {
   var total = coop + versus;
   var values = [coop, versus];
-  var ctx = document.getElementById("coopChart");
-  var coopChart = new Chart(ctx, {
+  var chart = document.getElementById("coopChart");
+  var coopChart = new Chart(chart, {
     type: 'doughnut',
     data: {
       labels: ["Coop", "Versus"],
