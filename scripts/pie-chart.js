@@ -4,8 +4,13 @@ $.get(feedSource, function(data, status) {
   console.log("Data: ", data, "\nStatus: ", status);
   var result = calculateWinRate(data.feed)
   var coop = calculateCoop(data.feed)
+  var total = provideTotal(data.feed)
+  var pandemic = calculatePandemic(data.feed)
   console.log(result);
   console.log(coop);
+  console.log(total);
+  console.log(pandemic.wins);
+  console.log(pandemic.losses);
   renderChart(result.hannah, result.john, result.draw, result.other);
   renderCoopChart(coop.coop, coop.versus);
 })
@@ -82,4 +87,16 @@ function calculateCoop(feedData) {
   coop.versus = feedData.filter(item => item.coOp === 'No').length
   console.log('[Pie Chart] Coop', feedData.filter(item => item.coOp !== 'Yes' && item.coOp !== 'No'))
   return coop;
+}
+
+function provideTotal(feedData) {
+  var total = feedData.length
+  return total;
+}
+
+function calculatePandemic(feedData) {
+  var pandemic = {}
+  pandemic.wins = feedData.filter(item => item.name === "Pandemic" && item.coOpOutcome === "Won").length
+  pandemic.losses = feedData.filter(item => item.name === "Pandemic" && item.coOpOutcome === "Lost").length
+  return pandemic;
 }
