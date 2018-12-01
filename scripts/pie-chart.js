@@ -11,6 +11,7 @@ $.get(feedSource, function(data, status) {
   console.log(total);
   console.log(pandemic.wins);
   console.log(pandemic.losses);
+  console.log(pandemic.games);
   renderChart(result.hannah, result.john, result.draw, result.other);
   renderCoopChart(coop.coop, coop.versus);
 })
@@ -96,7 +97,8 @@ function provideTotal(feedData) {
 
 function calculatePandemic(feedData) {
   var pandemic = {}
-  pandemic.wins = feedData.filter(item => item.name === "Pandemic" && item.coOpOutcome === "Won").length
-  pandemic.losses = feedData.filter(item => item.name === "Pandemic" && item.coOpOutcome === "Lost").length
+  pandemic.wins = feedData.filter(item => item.name === "Pandemic Legacy: Season 1" && item.coOpOutcome === "Won").length
+  pandemic.losses = feedData.filter(item => item.name === "Pandemic Legacy: Season 1" && item.coOpOutcome === "Lost").length
+  pandemic.games = feedData.filter(item => item.name === "Pandemic Legacy: Season 1")
   return pandemic;
 }
