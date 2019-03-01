@@ -147,4 +147,13 @@ body {
 .content-outside {
   position: relative;
 }
+
+body:after {
+  content: 'Designed by Calisaurus 2019';
+  text-align: center;
+  color: white;
+  background-color: #333;
+  padding: 20px;
+  display: block;
+  /*border-bottom: 50px solid black;*/
 }
