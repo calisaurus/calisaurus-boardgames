@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cross-env SITE_URL='http://localhost:8080' mocha",
-    "test:live": "cross-env SITE_URL='http://boardgames.calisaurus.net' mocha"
+    "test:live": "cross-env SITE_URL='http://boardgames.calisaurus.net' mocha",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
