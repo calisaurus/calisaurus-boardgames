@@ -7,7 +7,7 @@ new Vue({
   },
   mounted () {
     axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .get('https://boardgames-api.calisaurus.net/api/boardgame/stats/byMonth/2020-01')
       .then(response => (this.info = response))
   }
 })
