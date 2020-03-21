@@ -103,9 +103,31 @@
   <div class="content-holder">
    
 
-    <div id="app">
+    <div id="app" v-if="info.data">
       <h2>Total Games Played: {{info.data.totalGamesPlayed}}</h2>
-      <pre>{{ info }}</pre>
+      <br /><br/>
+
+      <h2>Game:Day Ratio: {{info.data.averageGamesPlayedPerDay}}</h2>
+      <br /><br/>
+
+      <h2>Most games played in a day:</h2> 
+      <div v-for="day in info.data.mostGamesPlayedInADay">
+        <h2>{{day.games.length}} games played on {{day.date}}</h2>
+        <h2 v-for="game in day.games">
+          {{game}}
+        </h2>
+      </div>
+
+      <h2>Percentage of co-operative games played: {{info.data.coOpGamesPlayedPercentage}}% ({{info.data.coOpGamesPlayedCount}} games), {{info.data.coOpGameWins}} wins and {{info.data.coOpGameLoses}} losses</h2>
+
+      <h2>Win rates between Hannah and John in versus games: {{info.data.winRateHannah}}% ({{info.data.winCountHannah}} games) to Hannah and {{info.data.winRateJohn}}% ({{info.data.winCountJohn}} games) to John.</h2>
+
+      <h2>Complete list of unique games played in January:</h2>
+      {{info.data.gamesPlayed}}
+    
+      
+      
+      <!--<pre>{{ info }}</pre>-->
     </div>
   
   </div>
