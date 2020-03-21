@@ -5,14 +5,16 @@ new Vue({
       info: {}
     }
   },
+  props: ['datecode'],
   mounted () {
+    const dateCode = document.getElementById('dateCode').getAttribute('data-dateCode')
     axios
-      .get('https://boardgames-api.calisaurus.net/api/boardgame/stats/byMonth/2020-01')
+      .get(`https://boardgames-api.calisaurus.net/api/boardgame/stats/byMonth/${dateCode}`)
       .then(response => (this.info = response))
   },
   computed: {
       monthStats: function() {
-          return this.info.data || {}
+          return this.info.data
       },
       mostGamesPlayedInADay: function() {
           return this.sortByDate(this.monthStats.mostGamesPlayedInADay)
