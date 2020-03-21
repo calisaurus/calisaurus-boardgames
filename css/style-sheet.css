@@ -79,3 +79,11 @@
       list-style-type: none;
           }
   
+    body:after {
+            content: 'Designed by Calisaurus 2020';
+            text-align: center;
+            color: white;
+            background-color: #333;
+            padding: 20px;
+            display: block;
+    }

@@ -29,11 +29,17 @@
    
 
     <div id="app" v-if="info.data">
-      <h2>Total Games Played: {{info.data.totalGamesPlayed}}</h2>
-      <br /><br/>
+      <h2>Total games played:</h2>
+      {{info.data.totalGamesPlayed}}
 
-      <h2>Game:Day Ratio: {{info.data.averageGamesPlayedPerDay}}</h2>
-      <br /><br/>
+      <h2>Average games played per day:</h2>
+      {{formatAverage(monthStats.averageGamesPlayedPerDay)}}
+
+      <h2>Percentage of co-operative games played:</h2>
+      {{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{info.data.coOpGamesPlayedCount}} games), {{info.data.coOpGameWins}} wins and {{info.data.coOpGameLoses}} losses
+
+      <h2>Win rates between Hannah and John in versus games:</h2>
+      {{formatPercentage(monthStats.winRateHannah)}} ({{info.data.winCountHannah}} games) to Hannah and {{formatPercentage(monthStats.winRateJohn)}} ({{info.data.winCountJohn}} games) to John
 
       <h2>Most games played in a day:</h2> 
       <div v-for="day in mostGamesPlayedInADay">
@@ -43,19 +49,20 @@
         </p>
       </div>
 
-      <h2>Percentage of co-operative games played: {{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{info.data.coOpGamesPlayedCount}} games), {{info.data.coOpGameWins}} wins and {{info.data.coOpGameLoses}} losses</h2>
-
-      <h2>Win rates between Hannah and John in versus games: {{info.data.winRateHannah}}% ({{info.data.winCountHannah}} games) to Hannah and {{info.data.winRateJohn}}% ({{info.data.winCountJohn}} games) to John.</h2>
-
+      <h2>Most played game:</h2>
+      <div v-for="game in monthStats.mostPlayedGames"> 
+        {{game.name}} with {{game.plays}} plays
+      </div>
+      
       <h2>Complete list of unique games played in January:</h2>    
       <ul>
         <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
       </ul>
-      
-      <!--<pre>{{ info }}</pre>-->
+
     </div>
   
   </div>
+  <br /><br />
 
   <script src="script-january.js"></script>
 </body>

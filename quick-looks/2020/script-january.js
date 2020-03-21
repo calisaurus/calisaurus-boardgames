@@ -20,10 +20,13 @@ new Vue({
   },
   methods: {
       formatPercentage: function(number) {
-          return Number(number * 100).toFixed(2) + '%'
+          return Number(number * 100).toPrecision(2) + '%'
       },
       formatDate: function(date) {
           return moment(date).format('Do MMMM')
+      },
+      formatAverage: function(number) {
+        return Number(number).toPrecision(2)
       },
       sortByDate: function(list) {
         return list.sort(function (a, b) {
