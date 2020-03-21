@@ -4,93 +4,18 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="/css/style-sheet.css" rel="stylesheet">
   <link rel="shortcut icon" href="/assets/favicon.png">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   
   <title>January 2020</title>
-  <style>
-    html {
-      font-family: 'Lato', Helvetica, sans-serif;
-      color: black;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .banner {
-      background-image: url('/assets/2020/january.jpg');
-      height: 700px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-    }
-
-    .banner:before {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 700px;
-      content: '';
-      opacity: .3;
-      background-color: #222;
-    }
-
-    .banner-link {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 1;
-    }
-
-    .banner-link>p {
-      color: white;
-      margin: 0;
-    }
-
-    .banner-link>p>a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.8em;
-      font-weight: bold;
-    }
-
-    .title {
-      font-size: 2.33em;
-      color: #fff;
-      text-transform: uppercase;
-      word-wrap: break-word;
-      text-align: center;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-    }
-
-    .title>h1 {
-      margin: 0;
-    }
-
-    .content-holder {
-      text-align: center;
-    }
-
-    .content {
-      width: 660px;
-      display: inline-block;
-      text-align: left;
-    }
-  </style>
+  
 </head>
 
 <body>
-  <div class="banner">
+  <div class="banner" style="background-image: url('/assets/2020/january.jpg');">
     <div class="banner-link">
       <p><a href="/index">A BOARD GAME A DAY</a></p>
       <p>board games, every day</p>
@@ -111,21 +36,21 @@
       <br /><br/>
 
       <h2>Most games played in a day:</h2> 
-      <div v-for="day in info.data.mostGamesPlayedInADay">
-        <h2>{{day.games.length}} games played on {{day.date}}</h2>
-        <h2 v-for="game in day.games">
+      <div v-for="day in mostGamesPlayedInADay">
+        <h3>{{day.games.length}} games played on {{formatDate(day.date)}}</h3>
+        <p v-for="game in day.games">
           {{game}}
-        </h2>
+        </p>
       </div>
 
-      <h2>Percentage of co-operative games played: {{info.data.coOpGamesPlayedPercentage}}% ({{info.data.coOpGamesPlayedCount}} games), {{info.data.coOpGameWins}} wins and {{info.data.coOpGameLoses}} losses</h2>
+      <h2>Percentage of co-operative games played: {{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{info.data.coOpGamesPlayedCount}} games), {{info.data.coOpGameWins}} wins and {{info.data.coOpGameLoses}} losses</h2>
 
       <h2>Win rates between Hannah and John in versus games: {{info.data.winRateHannah}}% ({{info.data.winCountHannah}} games) to Hannah and {{info.data.winRateJohn}}% ({{info.data.winCountJohn}} games) to John.</h2>
 
-      <h2>Complete list of unique games played in January:</h2>
-      {{info.data.gamesPlayed}}
-    
-      
+      <h2>Complete list of unique games played in January:</h2>    
+      <ul>
+        <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
+      </ul>
       
       <!--<pre>{{ info }}</pre>-->
     </div>
