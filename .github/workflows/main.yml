@@ -1,5 +1,7 @@
 name: Deploy via git-ftp
 on: push
+  branches:
+      - master
 jobs:
   deploy:
     name: Deploy
@@ -12,4 +14,3 @@ jobs:
         url: "ftp://ftp.calisaurus.net"
         user: githubactionsftp
         password: ${{ secrets.FTP_PASSWORD }}
-        -b: master
