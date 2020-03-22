@@ -1,6 +1,7 @@
 name: Deploy via git-ftp
-on: push
-  branches:
+on: 
+  push:
+    branches:
       - master
 jobs:
   deploy:
