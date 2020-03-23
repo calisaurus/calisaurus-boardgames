@@ -20,5 +20,4 @@ jobs:
         user: githubactionsftp
         password: ${{ secrets.FTP_PASSWORD }}
         localDir: "build"
-        remoteDir: ""
   
