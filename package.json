@@ -27,7 +27,6 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-    "handlebars": "^4.7.3",
     "mocha": "^7.1.1",
     "vue": "^2.6.11"
   },
