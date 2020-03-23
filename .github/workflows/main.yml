@@ -16,7 +16,7 @@ jobs:
     - name: ftp upload
       uses: sebastianpopp/ftp-action@releases/v2
       with:
-        host: "ftp://ftp.calisaurus.net"
+        host: "ftp.calisaurus.net"
         user: githubactionsftp
         password: ${{ secrets.FTP_PASSWORD }}
         localDir: "build"
