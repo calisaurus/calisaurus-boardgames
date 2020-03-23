@@ -1,15 +1,15 @@
 new Vue({
-  el: '#app',
+  el: '#byYearApp',
   data () {
     return {
       info: {}
     }
   },
-  props: ['datecode'],
+  props: ['year'],
   mounted () {
-    const dateCode = document.getElementById('dateCode').getAttribute('data-dateCode')
+    const yearCode = document.getElementById('year').getAttribute('data-yearCode')
     axios
-      .get(`https://boardgames-api.calisaurus.net/api/boardgame/stats/byMonth/${dateCode}`)
+      .get(`https://boardgames-api.calisaurus.net/api/boardgame/stats/byYear/${yearCode}`)
       .then(response => (this.info = response))
   },
   computed: {
@@ -28,7 +28,7 @@ new Vue({
           return moment(date).format('Do MMMM')
       },
       formatAverage: function(number) {
-        return Number(number).toPrecision(2)
+        return Number(number).toPrecision(3)
       },
       sortByDate: function(list) {
         return list.sort(function (a, b) {
