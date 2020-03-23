@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build && http-server build/",
     "clean": "rm -rf build && mkdir -p build/scripts",
-    "build": "npm run clean && cp -r content/html/* build && cp -r content/images/* build && cp -r styles/* build && cp -r scripts/* build/scripts/",
+    "build": "npm run clean && cp -r content/html/* build && cp -r content/images/* build && cp -r styles/* build && cp -r scripts/* build/scripts/ && ls -la build",
     "watch": "nodemon --exec npm start",
     "security-update": "npm update && npm audit fix && rm package-lock.json && rm -rf node_modules && npm install"
   },
