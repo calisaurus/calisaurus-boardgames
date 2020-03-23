@@ -1,4 +1,4 @@
-name: Deploy via git-ftp
+name: Deploy via ftp
 on: 
   push:
     branches:
@@ -11,12 +11,14 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - run: npm run build
-    - name: git-ftp push
-      uses: sebastianpopp/git-ftp-action@releases/v3
+    - name: ftp upload
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
         url: "ftp://ftp.calisaurus.net"
         user: githubactionsftp
         password: ${{ secrets.FTP_PASSWORD }}
-        syncroot: build
+        localDir: "dist"
+        remoteDir: ""
+  
