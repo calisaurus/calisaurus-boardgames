@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="/css/style-sheet.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/favicon.png">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
+  <title>February 2020</title>
+  
+</head>
+
+<body>
+
+  <div class="content-holder">
+   
+    <div id="dateCode" data-dateCode="2020-02"></div>
+    <div id="app" v-if="monthStats">
+      <h2>Total games played:</h2>
+      {{monthStats.totalGamesPlayed}}
+
+      <h2>Games played YTD:</h2>
+      {{formatAverage(monthStats.averageGamesPlayedPerDay)}}
+
+      <h2>Most played game:</h2>
+      <div v-for="game in monthStats.mostPlayedGames"> 
+        {{game.name}} with {{game.plays}} plays
+      </div>
+      
+      <h2>Complete list of unique games played:</h2>    
+      <ul>
+        <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
+      </ul>
+
+    </div>
+  
+  </div>
+  <br /><br />
+
+  <script src="/scripts/byMonth.js"></script>
+
+</body>
+
+
+
+</html>
