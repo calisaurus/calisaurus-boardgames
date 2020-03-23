@@ -1,5 +1,4 @@
 name: Deploy via git-ftp
-name: Deploy via git-ftp
 on: 
   push:
     branches:
