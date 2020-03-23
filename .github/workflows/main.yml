@@ -1,4 +1,5 @@
 name: Deploy via git-ftp
+name: Deploy via git-ftp
 on: 
   push:
     branches:
@@ -12,11 +13,11 @@ jobs:
         node-version: [12.x]
     steps:
     - uses: actions/checkout@v1
-    - run: npm run build
     - name: git-ftp push
       uses: sebastianpopp/git-ftp-action@releases/v3
       with:
         url: "ftp://ftp.calisaurus.net"
         user: githubactionsftp
         password: ${{ secrets.FTP_PASSWORD }}
+        run: npm start
         syncroot: build
