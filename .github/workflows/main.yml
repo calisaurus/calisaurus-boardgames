@@ -7,6 +7,9 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
     - uses: actions/checkout@v1
     - name: git-ftp push
@@ -15,3 +18,5 @@ jobs:
         url: "ftp://ftp.calisaurus.net"
         user: githubactionsftp
         password: ${{ secrets.FTP_PASSWORD }}
+        run: npm start
+        syncroot: build
