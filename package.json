@@ -7,9 +7,8 @@
     "start": "npm run build && http-server build/",
     "clean": "rm -rf build && mkdir -p build/scripts",
     "build": "npm run clean && cp -r content/html/* build && cp -r content/images/* build && cp -r styles/* build && cp -r scripts/* build/scripts/",
-    "test": "cross-env SITE_URL='http://localhost:8080' mocha",
-    "test:live": "cross-env SITE_URL='http://boardgames.calisaurus.net' mocha",
-    "watch": "nodemon --exec npm start"
+    "watch": "nodemon --exec npm start",
+    "security-update": "npm update && npm audit fix && rm package-lock.json && rm -rf node_modules && npm install"
   },
   "repository": {
     "type": "git",
@@ -22,12 +21,9 @@
   },
   "homepage": "https://github.com/hannahbunce/calisaurus-boardgames#readme",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "cross-env": "^5.2.1",
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-    "mocha": "^5.2.0",
     "vue": "^2.6.11"
   },
   "nodemonConfig": {
