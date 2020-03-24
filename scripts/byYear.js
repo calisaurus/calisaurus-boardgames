@@ -30,6 +30,9 @@ new Vue({
       formatAverage: function(number) {
         return Number(number).toPrecision(3)
       },
+      gamesRemaining: function(number) {
+        return Number(366 - number)
+      },
       sortByDate: function(list) {
         return list.sort(function (a, b) {
             const dateA = new Date(a.date)
