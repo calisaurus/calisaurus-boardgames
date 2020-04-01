@@ -13,11 +13,11 @@ new Vue({
       .then(response => (this.info = response))
   },
   computed: {
-      monthStats: function() {
+      yearStats: function() {
           return this.info.data
       },
       mostGamesPlayedInADay: function() {
-          return this.sortByDate(this.monthStats.mostGamesPlayedInADay)
+          return this.sortByDate(this.yearStats.mostGamesPlayedInADay)
       }
   },
   methods: {

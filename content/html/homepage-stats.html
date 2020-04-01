@@ -19,27 +19,31 @@
   <div class="content-holder">
    
     <div id="year" data-yearCode="2020"></div>
-    <div id="byYearApp" v-if="monthStats">
+    <div id="byYearApp" v-if="yearStats">
       <h2>Total games played in 2020:</h2>
-      {{monthStats.totalGamesPlayed}}
+      {{yearStats.totalGamesPlayed}}
 
       <h2>Challenge completion:</h2>
-      {{formatPercentage(monthStats.totalGamesPlayed / 366)}}
+      {{formatPercentage(yearStats.totalGamesPlayed / 366)}}
 
       <h2>Games remaining:</h2>
       <div>
-        {{gamesRemaining(monthStats.totalGamesPlayed)}}
+        {{gamesRemaining(yearStats.totalGamesPlayed)}}
       </div>
 
-
       <h2>Most played game:</h2>
-      <div v-for="game in monthStats.mostPlayedGames"> 
+      <div v-for="game in yearStats.mostPlayedGames"> 
         {{game.name}} with {{game.plays}} plays
+      </div>
+
+      <h2>Number of unique games played:</h2>
+      <div>
+        {{yearStats.uniqueGamesPlayedCount}}
       </div>
       
       <h2>Complete list of unique games played:</h2>    
       <ul>
-        <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
+        <li v-for="game in yearStats.uniqueGamesPlayed">{{game}}</li>
       </ul>
 
     </div>
