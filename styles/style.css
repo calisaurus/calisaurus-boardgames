@@ -101,6 +101,10 @@ body {
   background-image: url('/assets/2020/march.jpg');
 }
 
+.april-2020 {
+  background-image: url('/assets/2020/april.jpg');
+}
+
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
