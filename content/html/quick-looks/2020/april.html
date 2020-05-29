@@ -39,7 +39,7 @@
       {{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{monthStats.coOpGamesPlayedCount}} games), {{monthStats.coOpGameWins}} wins and {{monthStats.coOpGameLoses}} loss
 
       <h2>Win rates between Hannah and John in versus games:</h2>
-      {{formatPercentage(monthStats.winRateHannah)}} ({{monthStats.winCountHannah}} games) to Hannah and {{formatPercentage(monthStats.winRateJohn)}} ({{monthStats.winCountJohn}} games) to John
+      {{formatPercentage(monthStats.winPercentageHannah)}} ({{monthStats.winCountHannah}} games) to Hannah and {{formatPercentage(monthStats.winPercentageJohn)}} ({{monthStats.winCountJohn}} games) to John
 
       <h2>Most games played in a day:</h2> 
       <div v-for="day in mostGamesPlayedInADay">
