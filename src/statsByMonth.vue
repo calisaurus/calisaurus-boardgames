@@ -30,6 +30,9 @@
         <li v-for="game in monthStats.uniqueGamesPlayed" :key="game">{{game}}</li>
         </ul>
     </div>
+    <div v-else>
+        Loading data from {{datecode}}
+    </div>
 </template>
 
 <script>
@@ -45,6 +48,9 @@ export default {
   },
   props: ['datecode'],
   mounted () {
+      if (!this.datecode) {
+          return
+      }
     axios
       .get(`https://boardgames-api.calisaurus.net/api/boardgame/stats/byMonth/${this.datecode}`)
       .then(response => (this.info = response))
