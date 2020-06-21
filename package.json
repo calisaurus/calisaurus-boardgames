@@ -8,6 +8,7 @@
     "clean": "rm -rf build && mkdir -p build/scripts",
     "build": "npm run clean && cp -r content/html/* build && cp -r content/images/* build && cp -r styles/* build && cp -r scripts/* build/scripts/ && ls -la build",
     "watch": "nodemon --exec npm start",
+    "storybook": "start-storybook",
     "security-update": "npm update && npm audit fix && rm package-lock.json && rm -rf node_modules && npm install"
   },
   "repository": {
@@ -21,9 +22,17 @@
   },
   "homepage": "https://github.com/hannahbunce/calisaurus-boardgames#readme",
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "@babel/core": "^7.10.3",
+    "@storybook/vue": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "babel-preset-vue": "^2.0.2",
+    "nodemon": "^2.0.2",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "moment": "^2.27.0",
     "vue": "^2.6.11"
   },
   "nodemonConfig": {
