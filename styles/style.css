@@ -109,6 +109,14 @@ body {
   background-image: url('/assets/2020/may.jpg');
 }
 
+.june-2020 {
+  background-image: url('/assets/2020/june.jpg');
+}
+
+.july-2020 {
+  background-image: url('/assets/2020/january.jpg');
+}
+
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
