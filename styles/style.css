@@ -117,6 +117,9 @@ body {
   background-image: url('/assets/2020/january.jpg');
 }
 
+.august-2020 {
+  background-image: url('/assets/2020/august.png');
+}
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
