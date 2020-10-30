@@ -124,6 +124,10 @@ body {
 .september-2020 {
   background-image: url('/assets/2020/september.jpg');
 }
+
+.october-2020 {
+  background-image: url('/assets/2020/october.jpg');
+}
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
