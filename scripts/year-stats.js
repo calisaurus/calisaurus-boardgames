@@ -9,15 +9,15 @@ new Vue({
   mounted () {
     const dateCode = document.getElementById('dateCode').getAttribute('data-dateCode')
     axios
-      .get(`https://boardgames-api.calisaurus.net/api/boardgame/stats/byMonth/${dateCode}`)
+      .get(`https://boardgames-api.calisaurus.net/api/boardgame/stats/byYear/${dateCode}`)
       .then(response => (this.info = response))
   },
   computed: {
-      monthStats: function() {
+      yearStats: function() {
           return this.info.data
       },
       mostGamesPlayedInADay: function() {
-          return this.sortByDate(this.monthStats.mostGamesPlayedInADay)
+          return this.sortByDate(this.yearStats.mostGamesPlayedInADay)
       }
   },
   methods: {

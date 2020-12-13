@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div class="banner" style="background-image: url('/assets/2020/september.jpg');">
+  <div class="banner" style="background-image: url('/assets/2020/january.jpg');">
     <div class="banner-link">
       <p><a href="/index">A BOARD GAME A DAY</a></p>
       <p>board games, every day</p>
@@ -28,18 +28,18 @@
   <div class="content-holder">
    
     <div id="dateCode" data-dateCode="2020"></div>
-    <div id="app" v-if="monthStats">
+    <div id="app" v-if="yearStats">
       <h2>Total games played:</h2>
-      {{monthStats.totalGamesPlayed}} 
+      {{yearStats.totalGamesPlayed}} 
 
       <h2>Average games played per day:</h2>
-      {{formatAverage(monthStats.averageGamesPlayedPerDay)}}
+      {{formatAverage(yearStats.averageGamesPlayedPerDay)}}
 
       <h2>Percentage of co-operative games played:</h2>
-      {{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{monthStats.coOpGamesPlayedCount}} games), {{monthStats.coOpGameWins}} wins and {{monthStats.coOpGameLoses}} loss
+      {{formatPercentage(yearStats.coOpGamesPlayedPercentage)}} ({{yearStats.coOpGamesPlayedCount}} games), {{yearStats.coOpGameWins}} wins and {{yearStats.coOpGameLoses}} loss
 
       <h2>Win rates between Hannah and John in versus games:</h2>
-      {{formatPercentage(monthStats.winPercentageHannah)}} ({{monthStats.winCountHannah}} games) to Hannah and {{formatPercentage(monthStats.winPercentageJohn)}} ({{monthStats.winCountJohn}} games) to John
+      {{formatPercentage(yearStats.winPercentageHannah)}} ({{yearStats.winCountHannah}} games) to Hannah and {{formatPercentage(yearStats.winPercentageJohn)}} ({{yearStats.winCountJohn}} games) to John
 
       <h2>Most games played in a day:</h2> 
       <div v-for="day in mostGamesPlayedInADay">
@@ -50,13 +50,13 @@
       </div>
 
       <h2>Most played game:</h2>
-      <div v-for="game in monthStats.mostPlayedGames"> 
+      <div v-for="game in yearStats.mostPlayedGames"> 
         {{game.name}} with {{game.plays}} plays
       </div>
       
       <h2>Complete list of unique games played in 2020:</h2>    
       <ul>
-        <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
+        <li v-for="game in yearStats.uniqueGamesPlayed">{{game}}</li>
       </ul>
 
     </div>
@@ -64,7 +64,7 @@
   </div>
   <br /><br />
 
-  <script src="/scripts/month-stats.js"></script>
+  <script src="/scripts/year-stats.js"></script>
 
 </body>
 
