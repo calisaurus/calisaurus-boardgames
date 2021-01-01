@@ -133,6 +133,10 @@ body {
   background-image: url('/assets/2020/september.jpg');
 }
 
+.december-2020 {
+  background-image: url('/assets/2020/december.png');
+}
+
 .year-2020 {
   background-image: url('/assets/2020/january.jpg');
 }
