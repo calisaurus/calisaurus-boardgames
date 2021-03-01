@@ -144,6 +144,10 @@ body {
 .january-2021 {
   background-image: url('/assets/2021/star-realms.jpg');
 }
+
+.february-2021 {
+  background-image: url('/assets/2021/love-letter-2nd-ed.jpg');
+}
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
