@@ -28,7 +28,7 @@
   <div class="content-holder">
    
     <div id="dateCode" data-dateCode="2020-01"></div>
-    <div id="app" v-if="monthStats">
+    <div id="byMonthApp" v-if="monthStats">
       <h2>Total games played:</h2>
       {{monthStats.totalGamesPlayed}}
 
@@ -56,7 +56,7 @@
         {{game.name}} with {{game.plays}} plays
       </div>
       
-      <h2>Complete list of unique games played in January:</h2>    
+      <h2>Complete list of unique games played in {{monthStats.title}}:</h2>    
       <ul>
         <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
       </ul>
