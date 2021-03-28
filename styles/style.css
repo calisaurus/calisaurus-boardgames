@@ -117,6 +117,37 @@ body {
   background-image: url('/assets/2020/january.jpg');
 }
 
+.august-2020 {
+  background-image: url('/assets/2020/august.png');
+}
+
+.september-2020 {
+  background-image: url('/assets/2020/september.jpg');
+}
+
+.october-2020 {
+  background-image: url('/assets/2020/october.jpg');
+}
+
+.november-2020 {
+  background-image: url('/assets/2020/september.jpg');
+}
+
+.december-2020 {
+  background-image: url('/assets/2020/december.png');
+}
+
+.year-2020 {
+  background-image: url('/assets/2020/january.jpg');
+}
+
+.january-2021 {
+  background-image: url('/assets/2021/star-realms.jpg');
+}
+
+.february-2021 {
+  background-image: url('/assets/2021/love-letter-2nd-ed.jpg');
+}
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
@@ -174,7 +205,7 @@ body {
 }
 
 body:after {
-  content: 'Designed by Calisaurus 2020';
+  content: 'Designed by Calisaurus 2021';
   text-align: center;
   color: white;
   background-color: #333;

@@ -10,24 +10,24 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   
-  <title>April 2020</title>
+  <title>October 2020</title>
   
 </head>
 
 <body>
-  <div class="banner" style="background-image: url('/assets/2020/april.jpg');">
+  <div class="banner" style="background-image: url('/assets/2020/october.jpg');">
     <div class="banner-link">
       <p><a href="/index">A BOARD GAME A DAY</a></p>
       <p>board games, every day</p>
     </div>
 
     <div class="title">
-      <h1>April 2020 - A Quick Look</h1>
+      <h1>October 2020 - A Quick Look</h1>
     </div>
   </div>
   <div class="content-holder">
    
-    <div id="dateCode" data-dateCode="2020-04"></div>
+    <div id="dateCode" data-dateCode="2020-10"></div>
     <div id="app" v-if="monthStats">
       <h2>Total games played:</h2>
       {{monthStats.totalGamesPlayed}}
@@ -54,7 +54,7 @@
         {{game.name}} with {{game.plays}} plays
       </div>
       
-      <h2>Complete list of unique games played in February:</h2>    
+      <h2>Complete list of unique games played in October:</h2>    
       <ul>
         <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
       </ul>
