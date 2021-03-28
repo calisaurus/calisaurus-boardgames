@@ -21,13 +21,13 @@
   
   <div class="content-holder">
    
-    <div id="year" data-yearCode="2020"></div>
+    <div id="year" data-yearCode="2021"></div>
     <div id="byYearApp" v-if="yearStats">
-      <h2>Total games played in 2020:</h2>
+      <h2>Total games played so far in 2021:</h2>
       {{yearStats.totalGamesPlayed}}
 
       <h2>Challenge completion:</h2>
-      {{formatPercentage(yearStats.totalGamesPlayed / 366)}}
+      {{formatPercentage(yearStats.totalGamesPlayed / 365)}}
 
       <h2>Games remaining:</h2>
       <div>
