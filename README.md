@@ -5,4 +5,5 @@ Code and content for boardgames.calisaurus.net
 ```
 npm install 
 npm run watch
+npm start
 ```
