@@ -148,6 +148,11 @@ body {
 .february-2021 {
   background-image: url('/assets/2021/love-letter-2nd-ed.jpg');
 }
+
+.march-2021 {
+  background-image: url('/assets/2021/valeria.jpeg');
+}
+
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;

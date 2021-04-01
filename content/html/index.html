@@ -5,6 +5,10 @@
 <link rel="shortcut icon" href="./assets/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link href="./style.css" type="text/css" rel="stylesheet">
+<link href="/css/style-sheet.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </head>
@@ -14,42 +18,78 @@
     <h1>A Board Game A Day</h1>
     <h2>board games, every day</h2>
   </div>
+  
+  <div class="content-holder">
+   
+    <div id="year" data-yearCode="2021"></div>
+    <div id="byYearApp" v-if="yearStats">
+      <h2>Total games played so far in 2021:</h2>
+      {{yearStats.totalGamesPlayed}}
+
+      <h2>Challenge completion:</h2>
+      {{formatPercentage(yearStats.totalGamesPlayed / 365)}}
+
+      <h2>Games remaining:</h2>
+      <div>
+        {{gamesRemaining(yearStats.totalGamesPlayed)}}
+      </div>
+
+      <h2>Most played game:</h2>
+      <div v-for="game in yearStats.mostPlayedGames"> 
+        {{game.name}} with {{game.plays}} plays
+      </div>
+
+      <h2>Number of unique games played:</h2>
+      <div>
+        {{yearStats.uniqueGamesPlayedCount}}
+      </div>
+    
+    </div>
+
+    </div>
+  
+  </div>
+  <br /><br />
+
+  <script src="/scripts/byYear.js"></script>
+  
   <div class="link">
+
+    <div class="content-outside">
+      <div class="content-preview march-2021">
+        <a href="./quick-looks/2021/march">March 2021 - A Quick Look</a>
+      </div>
+    </div>
 
     <div class="content-outside">
       <div class="content-preview february-2021">
         <a href="./quick-looks/2021/february">February 2021 - A Quick Look</a>
       </div>
-    
     </div>
 
     <div class="content-outside">
       <div class="content-preview january-2021">
         <a href="./quick-looks/2021/january">January 2021 - A Quick Look</a>
       </div>
-    
     </div>
 
     <div class="content-outside">
       <div class="content-preview year-2020">
         <a href="./quick-looks/2020/2020">2020 - A Quick Look</a>
       </div>
+    </div>
 
     <div class="content-outside">
       <div class="content-preview december">
         <a href="./2020">2020 - A Review</a>
       </div>
-    
     </div>
 
-<div class="content-outside">
-  <div class="content-preview december">
-    <a href="./2018">2018 - A Review</a>
+    <div class="content-outside">
+      <div class="content-preview december">
+        <a href="./2018">2018 - A Review</a>
+      </div>
+    </div>
   </div>
-
-</div>
-
-
 </body>
 </html>
-
