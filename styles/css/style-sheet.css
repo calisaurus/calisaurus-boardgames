@@ -13,6 +13,7 @@
       display: inline-block;
       text-align: center;
       color: #A663CC;
+      background-color: #fff;
     }
 
     .banner {
@@ -73,13 +74,14 @@
 
     .content-holder {
       text-align: center;
-      
+      background-color: #B8D0EB;
     }
 
    
 
     #app>h2 {
       color: #6F2DBD;
+      
     }
 
 
