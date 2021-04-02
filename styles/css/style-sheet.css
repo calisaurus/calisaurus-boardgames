@@ -1,12 +1,18 @@
 
     html {
       font-family: 'Lato', Helvetica, sans-serif;
-      color: black;
     }
 
     body {
       margin: 0;
       padding: 0;
+    }
+
+    #app {
+      width: 660px;
+      display: inline-block;
+      text-align: center;
+      color: #A663CC;
     }
 
     .banner {
@@ -67,13 +73,15 @@
 
     .content-holder {
       text-align: center;
+      
     }
 
-    .content {
-      width: 660px;
-      display: inline-block;
-      text-align: left;
+   
+
+    #app>h2 {
+      color: #6F2DBD;
     }
+
 
     li {
       list-style-type: none;
