@@ -74,6 +74,7 @@
 
     .content-holder {
       text-align: center;
+      background-size: contain;
     }
 
     #app>h2 {
