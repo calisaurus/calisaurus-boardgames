@@ -25,23 +25,22 @@
       <h1>March 2021 - A Quick Look</h1>
     </div>
   </div>
-  <div class="content-holder">
+  <div class="content-holder" style="background-image: url('/assets/2021/valeria.jpeg');">
    
     <div id="dateCode" data-dateCode="2021-03"></div>
     <div id="app" v-if="monthStats">
-      <h2>Total games played:</h2>
-      {{monthStats.totalGamesPlayed}}
-
-      
+      <div class="total-games-played-block"><h2>Total games played:</h2>
+      <p class="total-games-played">{{monthStats.totalGamesPlayed}}</p>
+    </div>
 
       <h2>Average games played per day:</h2>
-      {{formatAverage(monthStats.averageGamesPlayedPerDay)}}
+      <p class="average-games-played-per-day">{{formatAverage(monthStats.averageGamesPlayedPerDay)}}</p>
 
       <h2>Percentage of co-operative games played:</h2>
-      {{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{monthStats.coOpGamesPlayedCount}} games), {{monthStats.coOpGameWins}} wins and {{monthStats.coOpGameLoses}} losses
+      <p class="coop-games-percentage">{{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{monthStats.coOpGamesPlayedCount}} games), {{monthStats.coOpGameWins}} wins and {{monthStats.coOpGameLoses}} losses</p>
 
       <h2>Win rates between Hannah and John in versus games:</h2>
-      {{formatPercentage(monthStats.winPercentageHannah)}} ({{monthStats.winCountHannah}} games) to Hannah and {{formatPercentage(monthStats.winPercentageJohn)}} ({{monthStats.winCountJohn}} games) to John
+      <p class="win-rates">{{formatPercentage(monthStats.winPercentageHannah)}} ({{monthStats.winCountHannah}} games) to Hannah and {{formatPercentage(monthStats.winPercentageJohn)}} ({{monthStats.winCountJohn}} games) to John</p>
 
       <h2>Most games played in a day:</h2> 
       <div v-for="day in mostGamesPlayedInADay">
@@ -64,7 +63,8 @@
     </div>
   
   </div>
-  <br /><br />
+  <br />
+  <br />
 
   <script src="/scripts/month-stats.js"></script>
 
