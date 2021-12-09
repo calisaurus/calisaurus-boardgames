@@ -153,6 +153,38 @@ body {
   background-image: url('/assets/2021/valeria.jpeg');
 }
 
+.april-2021 {
+  background-image: url('/assets/2021/mint-works.jpg');
+}
+
+.may-2021 {
+  background-image: url('/assets/2021/love-letter-2nd-ed.jpg');
+}
+
+.june-2021 {
+  background-image: url('/assets/2021/star-realms.jpg');
+}
+
+.july-2021 {
+  background-image: url('/assets/2021/love-craft-letter.png');
+}
+
+.august-2021 {
+  background-image: url('/assets/2021/dominion.jpg');
+}
+
+.september-2021 {
+  background-image: url('/assets/2021/hld.jpg');
+}
+
+.october-2021 {
+  background-image: url('/assets/2021/welcome-to.jpg');
+}
+
+.november-2021 {
+  background-image: url('/assets/2021/star-realms.jpg');
+}
+
 .content-preview {
   height: 200px;
   background-repeat: no-repeat;
