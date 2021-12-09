@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="/css/style-sheet.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/favicon.png">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
+  <title>July 2021</title>
+  
+</head>
+
+<body>
+  <div class="banner" style="background-image: url('/assets/2021/valeria.jpeg');">
+    <div class="banner-link">
+      <p><a href="/index">A BOARD GAME A DAY</a></p>
+      <p>board games, every day</p>
+    </div>
+
+    <div class="title">
+      <h1>July 2021 - A Quick Look</h1>
+    </div>
+  </div>
+  <div class="content-holder" style="background-image: url('/assets/2021/valeria.jpeg');">
+   
+    <div id="dateCode" data-dateCode="2021-07"></div>
+    <div id="app" v-if="monthStats">
+      <div class="total-games-played-block"><h2>Total games played:</h2>
+      <p class="total-games-played">{{monthStats.totalGamesPlayed}}</p>
+    </div>
+
+      <h2>Average games played per day:</h2>
+      <p class="average-games-played-per-day">{{formatAverage(monthStats.averageGamesPlayedPerDay)}}</p>
+
+      <h2>Percentage of co-operative games played:</h2>
+      <p class="coop-games-percentage">{{formatPercentage(monthStats.coOpGamesPlayedPercentage)}} ({{monthStats.coOpGamesPlayedCount}} games), {{monthStats.coOpGameWins}} wins and {{monthStats.coOpGameLoses}} losses</p>
+
+      <h2>Win rates between Hannah and John in versus games:</h2>
+      <p class="win-rates">{{formatPercentage(monthStats.winPercentageHannah)}} ({{monthStats.winCountHannah}} games) to Hannah and {{formatPercentage(monthStats.winPercentageJohn)}} ({{monthStats.winCountJohn}} games) to John</p>
+
+      <h2>Most games played in a day:</h2> 
+      <div v-for="day in mostGamesPlayedInADay">
+        <h3>{{day.games.length}} games played on {{formatDate(day.date)}}</h3>
+        <p v-for="game in day.games">
+          {{game}}
+        </p>
+      </div>
+
+      <h2>Most played game:</h2>
+      <div v-for="game in monthStats.mostPlayedGames"> 
+        {{game.name}} with {{game.plays}} plays
+      </div>
+      
+      <h2>Complete list of unique games played in July:</h2>    
+      <ul>
+        <li v-for="game in monthStats.uniqueGamesPlayed">{{game}}</li>
+      </ul>
+
+    </div>
+  
+  </div>
+  <br />
+  <br />
+
+  <script src="/scripts/month-stats.js"></script>
+
+</body>
+
+
+
+</html>
